@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAISON VELAR | Private Furniture Salon</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <style>
+    :root{--paper:#f3eee3;--paper-deep:#e7ddca;--ink:#111;--muted:#3d3a34;--line:#c8bfae;--brass:#8a6a3f;--wine:#541f1f;--open:0;--header-alpha:0;color-scheme:light}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 20% 10%,rgba(17,17,17,.05),transparent 24%),linear-gradient(90deg,rgba(17,17,17,.018) 1px,transparent 1px),linear-gradient(rgba(17,17,17,.018) 1px,transparent 1px);background-size:auto,42px 42px,42px 42px;mix-blend-mode:multiply;opacity:.6;z-index:20}
+    .grain{position:fixed;inset:0;pointer-events:none;background-image:repeating-radial-gradient(circle at 13% 27%,rgba(0,0,0,.08) 0 1px,transparent 1px 3px);opacity:.08;z-index:30}
+    a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px clamp(18px,4vw,54px);border-bottom:1px solid rgba(17,17,17,calc(var(--header-alpha)*.2));background:rgba(243,238,227,calc(var(--header-alpha)*.92));backdrop-filter:blur(calc(var(--header-alpha)*10px));opacity:calc(.15 + var(--header-alpha)*.85)}
+    .brand-mark{font-family:Georgia,"Times New Roman",serif;font-size:clamp(18px,2vw,26px);letter-spacing:.03em}.site-header nav{display:flex;gap:clamp(14px,2.4vw,34px);color:var(--muted);font-size:11px;text-transform:uppercase}
+    .opening{min-height:270vh}.opening-stage{position:sticky;top:0;height:100vh;display:grid;place-items:center;perspective:2000px;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(138,106,63,.17),transparent 30%),linear-gradient(120deg,#171512 0 32%,#2a241c 32% 33%,#efe5d3 33% 100%)}
+    .opening-stage:before{content:"";position:absolute;inset:auto 0 0;height:32vh;background:linear-gradient(0deg,rgba(0,0,0,.34),transparent);pointer-events:none}
+    .newspaper{position:relative;width:min(88vw,1260px);height:min(78vh,700px);transform-style:preserve-3d;transform-origin:90% 92%;transform:translateX(calc((1 - var(--open))*42vw)) translateY(calc((1 - var(--open))*34vh + var(--open)*1vh)) rotateX(calc(58deg - var(--open)*58deg)) rotateZ(calc(18deg - var(--open)*18deg)) scale(calc(.5 + var(--open)*.5));filter:drop-shadow(0 34px 48px rgba(0,0,0,calc(.42 - var(--open)*.12)))}
+    .newspaper:before{content:"";position:absolute;left:0;top:50%;width:100%;height:50%;transform:translateY(-2%) rotateX(calc(128deg - var(--open)*128deg));transform-origin:top center;background:linear-gradient(100deg,rgba(255,255,255,.42),transparent 28%,rgba(120,95,60,.12) 100%),var(--paper);border:1px solid rgba(17,17,17,.62);clip-path:polygon(0 .8%,98.6% 0,100% 15%,99.2% 61%,100% 100%,1.2% 99.2%,0 68%,.5% 28%);box-shadow:0 18px 44px rgba(0,0,0,calc(.24 + (1 - var(--open))*.22));opacity:calc(.85 - var(--open)*.45);pointer-events:none;z-index:7}
+    .newspaper:after{content:"";position:absolute;inset:-1px;background:linear-gradient(90deg,rgba(17,17,17,.08),transparent 22%,rgba(255,255,255,.28) 49%,rgba(17,17,17,.16) 50%,transparent 72%),linear-gradient(110deg,transparent 0 42%,rgba(255,255,255,.7) 47%,transparent 54%);opacity:calc(.22 + var(--open)*.55);pointer-events:none;z-index:9}
+    .paper-shadow{position:absolute;left:5%;right:5%;bottom:-12%;height:24%;background:radial-gradient(ellipse at center,rgba(0,0,0,.5),transparent 70%);filter:blur(24px);transform:translateX(calc((1 - var(--open))*18%)) rotateZ(calc(12deg - var(--open)*12deg)) scaleX(calc(.45 + var(--open)*.62));opacity:calc(.88 - var(--open)*.2)}
+    .cover-grid{height:100%;display:grid;grid-template-rows:.66fr 1.34fr;grid-template-columns:1fr;gap:0;position:relative;z-index:1;transform-style:preserve-3d;opacity:calc(.28 + var(--open)*.72)}.cover-left,.cover-right{background:linear-gradient(100deg,rgba(255,255,255,.38),transparent 24%,rgba(120,95,60,.08) 100%),var(--paper);border:1px solid rgba(17,17,17,.72);box-shadow:0 22px 55px rgba(0,0,0,calc(.16 + (1 - var(--open))*.16));clip-path:polygon(0 .8%,98.8% 0,100% 12%,99.2% 58%,100% 100%,1.2% 99.2%,0 70%,.6% 31%)}.cover-left{display:flex;flex-direction:column;padding:clamp(16px,2vw,28px);padding-right:clamp(18px,3vw,44px);transform-origin:center bottom;transform:rotateY(calc(5deg - var(--open)*5deg)) rotateZ(calc((1 - var(--open))*-1.2deg)) translateZ(1px)}.cover-right{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.7fr);grid-template-rows:auto 1fr auto;gap:14px;padding:clamp(14px,2vw,24px);padding-left:clamp(18px,3vw,40px);transform-origin:top center;transform:rotateX(calc(128deg - var(--open)*128deg)) rotateZ(calc((1 - var(--open))*1.6deg)) translateZ(2px)}
+    .cover-left:before,.cover-right:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 18% 24%,rgba(17,17,17,.08),transparent 20%),radial-gradient(ellipse at 82% 68%,rgba(255,255,255,.5),transparent 24%),repeating-linear-gradient(0deg,rgba(17,17,17,.022) 0 1px,transparent 1px 8px),repeating-linear-gradient(90deg,rgba(17,17,17,.018) 0 1px,transparent 1px 11px);mix-blend-mode:multiply;pointer-events:none;z-index:2}.cover-left:after,.cover-right:after{content:"";position:absolute;inset:0;background:linear-gradient(92deg,transparent 0 46%,rgba(17,17,17,.1) 49%,rgba(255,255,255,.34) 52%,transparent 58%);opacity:calc(.3 + (1 - var(--open))*.45);pointer-events:none;z-index:3}
+    .cover-left>*,.cover-right>*{position:relative;z-index:4}.issue,.dateline,.edition-label{margin:0;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase}.rule{height:1px;margin:16px 0 24px;background:var(--ink)}
+    .cover-title{margin:clamp(20px,4vh,38px) 0 12px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(68px,10.4vw,150px);line-height:.78;font-weight:500;transform:translateY(calc(20px - var(--open)*38px));transition:transform .08s linear;clip-path:inset(calc((1 - var(--open))*16%) 0 0 0)}
+    .cover-deck{max-width:520px;margin:0;color:var(--muted);font-family:Georgia,"Times New Roman",serif;font-size:clamp(17px,1.5vw,24px);line-height:1.12}.cover-photo{min-height:310px;border:1px solid var(--ink)}.cover-photo img{transform:scale(calc(1.12 - var(--open)*.08))}
+    .eiffel-card{grid-row:1 / 4;grid-column:2;min-height:100%;height:100%;border:1px solid var(--ink);background:#eee4d3;padding:8px}.eiffel-card img{object-fit:contain;filter:grayscale(1) contrast(1.32);object-position:center center}.salon-stamp{grid-column:1;border-top:12px solid var(--ink);border-bottom:12px solid var(--ink);height:38px;margin-top:4px}
+    .fake-copy{height:11px;width:72%;margin-top:18px;background:var(--ink);opacity:.86}.fake-copy.wide{width:92%}.fake-copy.short{width:46%}.column-copy{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:18px}.column-copy span{display:block;height:9px;background:var(--ink);opacity:.8}.editorial-note{max-width:330px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(18px,2vw,28px);line-height:1.1}
+    .ink-link,.appointment-form button{align-self:flex-start;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:13px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .22s ease,color .22s ease,transform .22s ease}.ink-link:hover,.appointment-form button:hover{background:var(--wine);transform:translateY(-2px)}
+    .paper-fold{position:absolute;top:-1%;bottom:-1%;left:calc(100% * 1.25 / 1.73);width:9px;transform:translateX(-50%) rotateY(calc(-24deg + var(--open)*24deg));background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(255,255,255,.68),rgba(0,0,0,.18));filter:blur(.2px);box-shadow:0 0 24px rgba(0,0,0,calc(.34 + (1 - var(--open))*.22));opacity:var(--open);z-index:10}.opening-caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);opacity:calc(1 - var(--open))}
+    .press-photo{position:relative;margin:0;overflow:hidden;background:#d8d0c3}.press-photo:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(0,0,0,.13) 0 1px,transparent 1px 4px),radial-gradient(circle,transparent 42%,rgba(0,0,0,.24));mix-blend-mode:multiply;opacity:.24;pointer-events:none;transition:opacity .45s ease}.press-photo img{filter:grayscale(1) contrast(1.18);transition:filter .45s ease,transform .7s ease}.hero-photo{margin-top:auto;height:36%;border-top:1px solid var(--ink)}
+    .masthead-section,.collection-section,.room-feature,.materials-section,.atelier-section,.appointment-section,.product-detail{padding:clamp(72px,10vw,140px) clamp(18px,5vw,72px)}.masthead-section{display:grid;grid-template-columns:.8fr 1.8fr 1fr;gap:36px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+    .masthead-section h2,.room-notes h2,.atelier-copy h2,.appointment-section h2,.product-copy h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(42px,7vw,112px);line-height:.9}.masthead-section p,.room-notes p,.atelier-copy p,.product-copy p{margin:0;color:var(--muted);font-size:clamp(16px,1.5vw,20px);line-height:1.55}
+    .buy-rail{position:fixed;left:50%;bottom:18px;z-index:45;display:flex;align-items:center;gap:18px;max-width:min(92vw,760px);padding:10px 10px 10px 18px;border:1px solid rgba(243,238,227,.28);background:rgba(17,17,17,.86);color:var(--paper);backdrop-filter:blur(14px);transform:translate(-50%,calc(120% - var(--header-alpha)*120%));transition:transform .25s ease}.buy-rail p{margin:0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#cabfae}.buy-rail strong{font-family:Georgia,"Times New Roman",serif;font-weight:500}.buy-rail a{background:var(--paper);color:var(--ink);padding:12px 14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .room-theatre{min-height:140vh;position:relative;background:#111;color:var(--paper);overflow:hidden}.theatre-sticky{position:sticky;top:0;min-height:100vh;display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(28px,5vw,80px);align-items:center;padding:clamp(74px,9vw,132px) clamp(18px,5vw,72px)}.theatre-copy{position:relative;z-index:2}.theatre-copy h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(58px,9vw,148px);font-weight:500;line-height:.82}.theatre-copy p{max-width:540px;color:#cabfae;font-size:clamp(16px,1.5vw,21px);line-height:1.55}.theatre-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.ghost-link{border:1px solid rgba(243,238,227,.42);padding:13px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.theatre-stage{position:relative;min-height:680px;perspective:1400px}.stage-type{position:absolute;inset:auto -8% 2%;font-family:Georgia,"Times New Roman",serif;font-size:clamp(84px,15vw,220px);line-height:.78;color:rgba(243,238,227,.07);white-space:nowrap;transform:translateX(calc((var(--scene-progress) - .5)*-90px));pointer-events:none}.stage-photo{position:absolute;inset:7% 11% 13% 3%;clip-path:polygon(0 8%,88% 0,100% 78%,16% 100%);border:1px solid rgba(243,238,227,.26);transform:translateY(calc((1 - var(--scene-progress))*42px)) rotateY(calc(-14deg + var(--scene-progress)*14deg)) rotateZ(calc(-3deg + var(--scene-progress)*3deg));box-shadow:0 40px 90px rgba(0,0,0,.45)}.stage-photo img{filter:grayscale(.85) contrast(1.18);transition:filter .5s ease,transform .8s ease}.room-theatre:hover .stage-photo img{filter:grayscale(0) contrast(1.04);transform:scale(1.025)}.stage-ticket{position:absolute;right:0;top:16%;width:min(280px,38vw);padding:18px;background:var(--paper);color:var(--ink);border:1px solid var(--ink);transform:translateY(calc((1 - var(--scene-progress))*-28px)) rotateZ(calc(4deg - var(--scene-progress)*4deg))}.stage-ticket p{margin:0;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.stage-ticket strong{display:block;margin-top:12px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(26px,3vw,44px);line-height:.9;font-weight:500}.stage-ticket span{display:block;margin-top:12px;color:var(--wine)}
+    .chooser-section{padding:clamp(72px,10vw,130px) clamp(18px,5vw,72px);background:var(--paper);border-top:1px solid var(--ink)}.chooser-shell{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(28px,5vw,72px);align-items:start}.chooser-copy h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,7vw,112px);line-height:.88;font-weight:500}.mood-tabs{display:grid;gap:10px;margin-top:30px}.mood-tabs button{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:transparent;padding:16px;color:var(--ink);font:inherit;text-align:left;cursor:pointer}.mood-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}.mood-panel{display:grid;grid-template-columns:1fr .76fr;gap:18px}.mood-image{min-height:560px;border:1px solid var(--ink);background:#eee4d3;padding:12px}.mood-image img{object-fit:contain;filter:grayscale(.95) contrast(1.18)}.mood-spec{border-top:1px solid var(--ink);padding-top:18px}.mood-spec h3{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,5vw,78px);line-height:.9;font-weight:500}.mood-spec p{color:var(--muted);line-height:1.55}.mood-spec a{display:inline-block;margin-top:16px}
+    .section-kicker{display:flex;align-items:center;gap:16px;margin-bottom:34px;border-top:1px solid var(--ink);padding-top:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:11px}.section-kicker span{color:var(--wine);font-family:Georgia,"Times New Roman",serif;font-size:28px;letter-spacing:0}.section-kicker p{margin:0}
+    .collection-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.product-card{min-height:430px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.12)}.product-card.large{grid-column:span 2;grid-row:span 2}.product-card.wide{grid-column:span 2}.product-card a{min-height:inherit;display:grid;grid-template-rows:1fr auto}.product-card .press-photo{min-height:300px}.product-card:hover img,.product-detail:hover img{filter:grayscale(0) contrast(1.04) saturate(1.08);transform:scale(1.035)}.product-card:hover .press-photo:after,.product-detail:hover .press-photo:after{opacity:.06}
+    .product-meta{padding:18px;display:grid;gap:7px}.product-meta p,.product-meta span{margin:0;color:var(--muted);font-size:11px;letter-spacing:.13em;text-transform:uppercase}.product-meta h3{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(28px,3vw,46px);font-weight:500;line-height:.95}
+    .city-dispatch{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,72px);padding:clamp(72px,9vw,120px) clamp(18px,5vw,72px);border-bottom:1px solid var(--line);background:#151515;color:var(--paper)}.city-dispatch .section-kicker{border-top-color:var(--paper);color:#cabfae}.city-dispatch h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,8vw,126px);font-weight:500;line-height:.86}.city-dispatch p{color:#cabfae;line-height:1.55}.city-photo{aspect-ratio:1/1;min-height:0;border:1px solid rgba(243,238,227,.34)}.city-photo img{filter:grayscale(1) contrast(1.35);object-position:center center}
+    .room-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:clamp(24px,5vw,70px);align-items:stretch}.room-photo{min-height:620px}.room-photo figcaption{position:absolute;left:16px;bottom:16px;background:var(--paper);padding:8px 10px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}.room-notes{display:flex;flex-direction:column;gap:28px;justify-content:space-between}
+    dl{margin:0;border-top:1px solid var(--ink)}dl div{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-bottom:1px solid var(--line);padding:16px 0}dt,dd{margin:0;font-size:12px;letter-spacing:.1em;text-transform:uppercase}dd{color:var(--muted)}
+    .material-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.material-grid article{min-height:280px;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.material-grid span{display:block;height:82px;margin-bottom:24px;background:linear-gradient(135deg,rgba(17,17,17,.18),transparent),repeating-linear-gradient(90deg,rgba(17,17,17,.28) 0 1px,transparent 1px 7px);filter:grayscale(1)}.material-grid h3{margin:0 0 12px;font-family:Georgia,"Times New Roman",serif;font-size:31px;font-weight:500}.material-grid p{margin:0;color:var(--muted);line-height:1.5}
+    .atelier-section{display:grid;grid-template-columns:1fr 1fr;gap:56px;background:var(--ink);color:var(--paper)}.atelier-section .section-kicker{border-top-color:var(--paper);color:#cabfae}.atelier-copy p{color:#cabfae;margin-top:28px}.atelier-steps{border-top:1px solid rgba(243,238,227,.5);align-self:end}.atelier-steps p{margin:0;display:grid;grid-template-columns:70px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid rgba(243,238,227,.28);font-family:Georgia,"Times New Roman",serif;font-size:clamp(22px,2.5vw,36px)}.atelier-steps span{color:#cabfae;font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em}
+    .appointment-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}.appointment-section h2{margin-top:18px}.appointment-form{display:grid;gap:18px;border-top:1px solid var(--ink);padding-top:18px}.appointment-form label{display:grid;gap:8px;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.appointment-form input,.appointment-form select{width:100%;border:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);padding:14px 12px;font:inherit;letter-spacing:0;text-transform:none}.appointment-form input:focus,.appointment-form select:focus{outline:2px solid rgba(84,31,31,.45);outline-offset:2px}.form-status{min-height:20px;margin:0;color:var(--wine)}
+    .product-detail{border-top:1px solid var(--ink)}.product-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(24px,5vw,72px);align-items:stretch}.product-copy{display:flex;flex-direction:column;justify-content:space-between;gap:28px}.product-copy h2{font-size:clamp(46px,8vw,132px)}.product-price{margin:18px 0;color:var(--wine);font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,4vw,60px)}.product-detail .press-photo{min-height:560px}.product-specs{border-top:1px solid var(--ink)}.product-specs div{display:grid;grid-template-columns:.75fr 1.25fr;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}.product-specs span:first-child{color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .site-footer{display:flex;justify-content:space-between;gap:20px;padding:24px clamp(18px,5vw,72px);border-top:1px solid var(--ink);color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.site-footer p{margin:0;color:var(--ink)}
+    @media(max-width:900px){.site-header{align-items:flex-start;flex-direction:column;padding:14px 18px}.site-header nav{width:100%;overflow-x:auto;padding-bottom:4px}.buy-rail{left:12px;right:12px;bottom:12px;transform:translateY(calc(120% - var(--header-alpha)*120%));max-width:none}.buy-rail p{display:none}.opening{min-height:190vh}.newspaper{width:92vw;height:80vh;transform-origin:90% 92%;transform:translateX(calc((1 - var(--open))*38vw)) translateY(calc((1 - var(--open))*32vh + var(--open)*-1vh)) rotateX(calc(58deg - var(--open)*58deg)) rotateZ(calc(18deg - var(--open)*18deg)) scale(calc(.52 + var(--open)*.48))}.cover-grid{grid-template-rows:1fr 1fr;grid-template-columns:1fr;gap:0}.cover-left{border-right:1px solid rgba(17,17,17,.72);border-bottom:1px solid var(--ink);padding:18px;transform:rotateY(calc(5deg - var(--open)*5deg))}.cover-right{grid-template-columns:1fr;border-left:1px solid rgba(17,17,17,.72);border-top:0;padding:18px;transform-origin:top center;transform:rotateX(calc(128deg - var(--open)*128deg)) translateZ(2px)}.eiffel-card{grid-row:auto;grid-column:auto;height:auto;padding:0}.eiffel-card img{object-fit:cover;object-position:38% 16%}.salon-stamp{grid-column:auto}.paper-fold{left:50%;top:50%;bottom:auto;width:100%;height:7px;transform:translate(-50%,-50%);}.cover-title{font-size:clamp(58px,17vw,104px);margin:42px 0 14px;transform:translateY(calc(78px - var(--open)*168px));clip-path:inset(calc((1 - var(--open))*34%) 0 0 0)}.cover-photo,.eiffel-card{min-height:220px}.editorial-note{font-size:18px}.masthead-section,.city-dispatch,.room-layout,.atelier-section,.appointment-section,.product-layout,.theatre-sticky,.chooser-shell,.mood-panel{grid-template-columns:1fr}.theatre-stage{min-height:520px}.stage-ticket{width:min(300px,80vw);right:8px}.mood-image{min-height:420px}.collection-grid,.material-grid{grid-template-columns:1fr}.product-card.large,.product-card.wide{grid-column:span 1}.room-photo,.product-detail .press-photo{min-height:430px}.city-photo{aspect-ratio:4/3;min-height:0}.city-photo img{height:100%;object-fit:cover}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}:root{--open:1}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <aside class="buy-rail" aria-label="Booking shortcut">
+    <p><strong>Private selection</strong> / sofa, chair, table / from $2,150</p>
+    <a href="#appointment">Book Viewing</a>
+  </aside>
+  <header class="site-header" aria-label="Primary navigation">
+    <a class="brand-mark" href="#top">MAISON VELAR</a>
+    <nav><a href="#collection">Collection</a><a href="#materials">Materials</a><a href="#atelier">Atelier</a><a href="#appointment">Appointment</a></nav>
+  </header>
+  <main>
+    <section class="opening" id="top" aria-label="Newspaper opening">
+      <div class="opening-stage">
+        <div class="newspaper" aria-hidden="true">
+          <div class="paper-shadow"></div>
+          <div class="cover-grid">
+            <div class="cover-left">
+              <p class="issue">Private Furniture Salon / Issue 01 / Est. 1998</p>
+              <div class="rule"></div>
+              <h1 class="cover-title">MAISON<br>VELAR</h1>
+              <p class="cover-deck">A private interior gazette for collected rooms, quiet materials and furniture with architectural weight.</p>
+            </div>
+            <div class="cover-right">
+              <p class="dateline">Milan / Paris / New York / Private Edition</p>
+              <figure class="press-photo eiffel-card"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=82" alt=""></figure>
+              <p class="editorial-note">Italian furniture, Paris appointments, private rooms above the noise.</p>
+              <div class="salon-stamp" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="paper-fold"></div>
+        </div>
+        <div class="opening-caption"><span>Scroll to place the front page on the table</span></div>
+      </div>
+    </section>
+
+    <section class="masthead-section">
+      <div class="edition-label">The First Page</div>
+      <h2>Furniture selected like architecture, printed like an evening paper.</h2>
+      <p>MAISON VELAR is a private furniture salon for collected interiors: low-volume pieces, tactile materials and rooms composed with restraint.</p>
+    </section>
+
+    <section class="room-theatre" id="theatre">
+      <div class="theatre-sticky">
+        <div class="theatre-copy">
+          <div class="section-kicker"><span>PLAY</span><p>Room Theatre</p></div>
+          <h2>The room moves first. The object follows.</h2>
+          <p>Choose one anchor piece and the salon builds the room around it: fabric, shadow, delivery route, installation. This is furniture treated like a private commission.</p>
+          <div class="theatre-actions">
+            <a class="ink-link" href="#collection">Shop The Collection</a>
+            <a class="ghost-link" href="#appointment">Reserve A Viewing</a>
+          </div>
+        </div>
+        <div class="theatre-stage">
+          <div class="stage-type">VELAR</div>
+          <figure class="press-photo stage-photo">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=84" alt="Luxury living room scene">
+          </figure>
+          <div class="stage-ticket">
+            <p>Featured object</p>
+            <strong>VELAR SOFA</strong>
+            <span>from $4,800 / Italian wool / walnut base</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chooser-section" id="chooser">
+      <div class="chooser-shell">
+        <div class="chooser-copy">
+          <div class="section-kicker"><span>SELECT</span><p>Find Your Room</p></div>
+          <h2>Three ways to enter the salon.</h2>
+          <div class="mood-tabs" role="tablist" aria-label="Room moods">
+            <button type="button" aria-selected="true" data-mood="living">Living Room <span>from $4,800</span></button>
+            <button type="button" aria-selected="false" data-mood="dining">Dining Room <span>from $3,900</span></button>
+            <button type="button" aria-selected="false" data-mood="bedroom">Bedroom <span>from $5,200</span></button>
+          </div>
+        </div>
+        <div class="mood-panel">
+          <figure class="press-photo mood-image">
+            <img id="mood-image" src="https://images.unsplash.com/photo-1550226891-ef816aed4a98?auto=format&fit=crop&w=1200&q=84" alt="Selected furniture mood">
+          </figure>
+          <div class="mood-spec">
+            <p class="edition-label" id="mood-kicker">Modular Sofa</p>
+            <h3 id="mood-title">VELAR SOFA</h3>
+            <p id="mood-copy">A low modular form for rooms that need silence, not decoration. Italian wool, smoked walnut base, 8-10 week lead time.</p>
+            <p class="product-price" id="mood-price">from $4,800</p>
+            <a class="ink-link" href="#appointment">Request This Piece</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="city-dispatch">
+      <div>
+        <div class="section-kicker"><span>00</span><p>City Dispatch</p></div>
+        <h2>Objects chosen for apartments above the noise.</h2>
+      </div>
+      <div>
+        <figure class="press-photo city-photo"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1300&q=84" alt="Black and white city architecture"></figure>
+        <p>Before a piece enters the salon, it is tested against the city: narrow elevators, evening light, old floors, new towers and rooms that cannot tolerate visual noise.</p>
+      </div>
+    </section>
+
+    <section class="collection-section" id="collection">
+      <div class="section-kicker"><span>01</span><p>The Collection</p></div>
+      <div class="collection-grid">
+        <article class="product-card large"><a href="#velar-sofa"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=82" alt="Velar Sofa"></figure><div class="product-meta"><p>Modular Sofa</p><h3>VELAR SOFA</h3><span>from $4,800</span></div></a></article>
+        <article class="product-card"><a href="#noir-lounge-chair"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=82" alt="Noir Lounge Chair"></figure><div class="product-meta"><p>Lounge Chair</p><h3>NOIR LOUNGE CHAIR</h3><span>from $2,150</span></div></a></article>
+        <article class="product-card"><a href="#ligne-dining-table"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=900&q=82" alt="Ligne Dining Table"></figure><div class="product-meta"><p>Dining Table</p><h3>LIGNE DINING TABLE</h3><span>from $3,900</span></div></a></article>
+        <article class="product-card"><a href="#marble-console"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=82" alt="Marble Console"></figure><div class="product-meta"><p>Stone Console</p><h3>MARBLE CONSOLE</h3><span>from $2,700</span></div></a></article>
+        <article class="product-card wide"><a href="#atlas-bed"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=82" alt="Atlas Bed"></figure><div class="product-meta"><p>Upholstered Bed</p><h3>ATLAS BED</h3><span>from $5,200</span></div></a></article>
+        <article class="product-card"><a href="#cava-cabinet"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=900&q=82" alt="Cava Cabinet"></figure><div class="product-meta"><p>Cabinet</p><h3>CAVA CABINET</h3><span>from $3,400</span></div></a></article>
+      </div>
+    </section>
+
+    <section class="room-feature">
+      <div class="section-kicker"><span>02</span><p>Editorial Room</p></div>
+      <div class="room-layout">
+        <figure class="press-photo room-photo"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=84" alt="Black and white luxury living room"><figcaption>Room study 04 / walnut, wool, low winter light</figcaption></figure>
+        <div class="room-notes"><h2>A salon that edits the room before selling the object.</h2><p>Every model is selected as part of a room system: proportion, surface, silence, durability. The catalogue is intentionally small because the pieces are meant to stay.</p><dl><div><dt>Lead time</dt><dd>6-10 weeks</dd></div><div><dt>Finish</dt><dd>Custom by appointment</dd></div><div><dt>Delivery</dt><dd>White glove installation</dd></div></dl></div>
+      </div>
+    </section>
+
+    <section class="materials-section" id="materials">
+      <div class="section-kicker"><span>03</span><p>Materials Archive</p></div>
+      <div class="material-grid"><article><span></span><h3>Italian Wool</h3><p>Dense, quiet, resistant to daily use.</p></article><article><span></span><h3>Smoked Walnut</h3><p>Deep grain, low sheen, hand finished.</p></article><article><span></span><h3>Patinated Brass</h3><p>Used as a small accent, never decoration.</p></article><article><span></span><h3>Honed Marble</h3><p>Stone selected for calm veining and weight.</p></article></div>
+    </section>
+
+    <section class="atelier-section" id="atelier">
+      <div class="atelier-copy"><div class="section-kicker"><span>04</span><p>Private Atelier</p></div><h2>Measured furniture for private rooms.</h2><p>The salon works by appointment: room survey, material edit, production schedule and installation. No loud showroom pressure, no disposable trends.</p></div>
+      <div class="atelier-steps"><p><span>01</span> Room brief and measurements</p><p><span>02</span> Material edit and finish samples</p><p><span>03</span> Production and white-glove installation</p></div>
+    </section>
+
+    <section class="product-detail" id="velar-sofa"><div class="section-kicker"><span>05</span><p>Catalogue Details</p></div><div class="product-layout"><div class="product-copy"><div><p class="issue">Catalogue No. 01 / Modular Sofa</p><h2>VELAR SOFA</h2><p class="product-price">from $4,800</p><p>A low modular form for rooms that need silence, not decoration. Italian wool, smoked walnut base, 3200 x 1040 x 720 mm. Lead time 8-10 weeks.</p></div><a class="ink-link" href="#appointment">Request Private Viewing</a></div><figure class="press-photo"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=84" alt="Velar Sofa"></figure></div></section>
+    <section class="product-detail" id="noir-lounge-chair"><div class="product-layout"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1300&q=84" alt="Noir Lounge Chair"></figure><div class="product-copy"><div><p class="issue">Catalogue No. 02 / Lounge Chair</p><h2>NOIR LOUNGE CHAIR</h2><p class="product-price">from $2,150</p><p>A compact silhouette with private-club weight. Aniline leather, matte black steel, 840 x 890 x 760 mm. Lead time 6-8 weeks.</p></div><a class="ink-link" href="#appointment">Request Private Viewing</a></div></div></section>
+    <section class="product-detail" id="ligne-dining-table"><div class="product-layout"><div class="product-copy"><div><p class="issue">Catalogue No. 03 / Dining Table</p><h2>LIGNE DINING TABLE</h2><p class="product-price">from $3,900</p><p>A long oak plane for dinners, drawings and quiet mornings. Solid oak, hand-oiled finish, 2800 x 980 x 740 mm. Lead time 7-9 weeks.</p></div><a class="ink-link" href="#appointment">Request Private Viewing</a></div><figure class="press-photo"><img src="https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=1300&q=84" alt="Ligne Dining Table"></figure></div></section>
+    <section class="product-detail" id="marble-console"><div class="product-layout"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1300&q=84" alt="Marble Console"></figure><div class="product-copy"><div><p class="issue">Catalogue No. 04 / Stone Console</p><h2>MARBLE CONSOLE</h2><p class="product-price">from $2,700</p><p>A narrow architectural line for entry halls and private corridors. Honed marble, dark ash veneer, 1600 x 420 x 820 mm. Lead time 6-8 weeks.</p></div><a class="ink-link" href="#appointment">Request Private Viewing</a></div></div></section>
+    <section class="product-detail" id="atlas-bed"><div class="product-layout"><div class="product-copy"><div><p class="issue">Catalogue No. 05 / Upholstered Bed</p><h2>ATLAS BED</h2><p class="product-price">from $5,200</p><p>A bedroom anchor with a soft wall-like headboard. Boucle textile, hardwood frame, 2200 x 2320 x 960 mm. Lead time 8-11 weeks.</p></div><a class="ink-link" href="#appointment">Request Private Viewing</a></div><figure class="press-photo"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1300&q=84" alt="Atlas Bed"></figure></div></section>
+    <section class="product-detail" id="cava-cabinet"><div class="product-layout"><figure class="press-photo"><img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1300&q=84" alt="Cava Cabinet"></figure><div class="product-copy"><div><p class="issue">Catalogue No. 06 / Cabinet</p><h2>CAVA CABINET</h2><p class="product-price">from $3,400</p><p>A cabinet for glass, objects and the small private archive. Dark veneer, brass, smoked glass, 1120 x 460 x 1860 mm. Lead time 7-9 weeks.</p></div><a class="ink-link" href="#appointment">Request Private Viewing</a></div></div></section>
+
+    <section class="appointment-section" id="appointment">
+      <div><p class="edition-label">Private Viewing</p><h2>Request an appointment with the salon.</h2></div>
+      <form class="appointment-form"><label>Name<input type="text" name="name" placeholder="Your name"></label><label>Phone or email<input type="text" name="contact" placeholder="+1 000 000 0000"></label><label>Room<select name="room"><option>Living room</option><option>Dining room</option><option>Bedroom</option><option>Private office</option></select></label><button type="submit">Book Private Viewing</button><p class="form-status" role="status"></p></form>
+    </section>
+  </main>
+  <footer class="site-footer"><p>MAISON VELAR</p><span>Private Furniture Salon / Interior Gazette / Issue 01</span></footer>
+  <script>
+    const root=document.documentElement,opening=document.querySelector(".opening"),theatre=document.querySelector(".room-theatre"),form=document.querySelector(".appointment-form");function clamp(v,min,max){return Math.min(Math.max(v,min),max)}function updateOpening(){if(opening){const progress=clamp(window.scrollY/(window.innerHeight*1.35),0,1),eased=1-Math.pow(1-progress,3);root.style.setProperty("--open",eased.toFixed(3));root.style.setProperty("--header-alpha",clamp((progress-.38)/.42,0,1).toFixed(3))}if(theatre){const rect=theatre.getBoundingClientRect(),progress=clamp((window.innerHeight-rect.top)/(window.innerHeight+rect.height*.5),0,1),eased=1-Math.pow(1-progress,2);root.style.setProperty("--scene-progress",eased.toFixed(3))}}window.addEventListener("scroll",updateOpening,{passive:true});window.addEventListener("resize",updateOpening);updateOpening();const moodData={living:{kicker:"Modular Sofa",title:"VELAR SOFA",copy:"A low modular form for rooms that need silence, not decoration. Italian wool, smoked walnut base, 8-10 week lead time.",price:"from $4,800",image:"https://images.unsplash.com/photo-1550226891-ef816aed4a98?auto=format&fit=crop&w=1200&q=84"},dining:{kicker:"Dining Table",title:"LIGNE DINING TABLE",copy:"A long oak plane for dinners, drawings and quiet mornings. Solid oak, hand-oiled finish, 7-9 week lead time.",price:"from $3,900",image:"https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=1200&q=84"},bedroom:{kicker:"Upholstered Bed",title:"ATLAS BED",copy:"A bedroom anchor with a soft wall-like headboard. Boucle textile, hardwood frame, 8-11 week lead time.",price:"from $5,200",image:"https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=84"}};document.querySelectorAll(".mood-tabs button").forEach(button=>{button.addEventListener("click",()=>{const mood=moodData[button.dataset.mood];document.querySelectorAll(".mood-tabs button").forEach(item=>item.setAttribute("aria-selected","false"));button.setAttribute("aria-selected","true");document.getElementById("mood-kicker").textContent=mood.kicker;document.getElementById("mood-title").textContent=mood.title;document.getElementById("mood-copy").textContent=mood.copy;document.getElementById("mood-price").textContent=mood.price;document.getElementById("mood-image").src=mood.image})});if(form){form.addEventListener("submit",e=>{e.preventDefault();const status=form.querySelector(".form-status");status.textContent="Request received. The salon will prepare a private selection.";form.reset()})}
+  </script>
+</body>
+</html>
